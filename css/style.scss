@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+// PRIMARY COLORS
+$cyan: hsl(179, 62%, 43%);
+$brightYellow: hsl(71, 73%, 54%);
+// NEUTRAL COLORS
+$lightGrey: hsl(204, 43%, 93%);
+$grayishBlue: hsl(218, 22%, 67%);
+
+body {
+  background-color: $lightGrey;
+  width: 100vw;
+  height: 100%;
+  padding: 60px 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  main {
+    background-color: white;
+    box-shadow: 0px 22px 48px -18px hsl(218, 22%, 67%);
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 500px;
+
+    .top-section {
+      h1 {
+        color: $cyan;
+      }
+
+      h3 {
+        font-size: 1rem;
+        color: $brightYellow;
+      }
+      p {
+        line-height: 1.8;
+        color: $grayishBlue;
+      }
+
+      span {
+        color: $brightYellow;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      .sign-up {
+        color: white;
+        background-color: $cyan;
+
+        .price {
+          font-size: 2rem;
+          position: relative;
+          margin-bottom: 10px;
+
+          &::after {
+            content: "per month";
+            color: hsla(0, 0%, 100%, 0.4);
+
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 14px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        .price-desc {
+          font-size: 16px;
+          color: hsla(0, 0%, 100%, 0.9);
+        }
+      }
+
+      .why-us {
+        color: white;
+        background-color: hsla(179, 62%, 43%, 0.9);
+
+        .why-us-desc {
+          color: hsla(0, 0%, 100%, 0.75);
+          line-height: 1.5;
+          padding-right: 30%;
+        }
+      }
+    }
+  }
+}
+
+//------------------------OVERWRITABLE CSS-----------------
+
+main > * {
+  font-size: 14px;
+}
+.make-bold {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+//Both Column
+.col {
+  flex: 1;
+  border: solid 1px hsla(0, 0%, 47%, 0.15);
+}
+.top-section,
+.col {
+  padding: 25px;
+}
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+button {
+  background-color: $brightYellow;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 18px 32px -16px rgba(0, 0, 0, 0.33);
+  color: hsl(71, 82%, 82%);
+  cursor: pointer;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 35px;
+  text-align: center;
+  text-shadow: 0px 1px 2px rgba(150, 150, 150, 1);
+
+  height: 50px;
+  width: 100%;
+
+  &:hover {
+    background-color: hsl(71, 71%, 42%);
+    color: hsl(71, 60%, 63%);
+  }
+}
+footer {
+  text-align: center;
+}
+// -----------------------OVERWRITABLE CSS END------------------
+// and (max-width: 1200px)
+@media only screen and (min-width: 768px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    main {
+      width: 660px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      max-width: 660px;
+
+      .top-section {
+        // height: 230px;
+        h1 {
+          color: $cyan;
+          margin-bottom: 35px;
+        }
+
+        h3 {
+          font-size: 1.13rem;
+          color: $brightYellow;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: bold;
+          line-height: 1.8;
+          color: $grayishBlue;
+        }
+
+        span {
+          color: $brightYellow;
+        }
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+
+        .sign-up {
+          color: white;
+          background-color: $cyan;
+
+          .price {
+            font-size: 2rem;
+            position: relative;
+            margin-bottom: 10px;
+
+            &::after {
+              content: "per month";
+              color: hsla(0, 0%, 100%, 0.4);
+
+              font-weight: 400;
+              font-size: 16px;
+              margin-left: 14px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          .price-desc {
+            color: hsla(0, 0%, 100%, 0.9);
+          }
+        }
+
+        .why-us {
+          color: white;
+          background-color: hsla(179, 62%, 43%, 0.9);
+
+          .why-us-desc {
+            color: hsla(0, 0%, 100%, 0.75);
+            line-height: 1.5;
+            padding-right: 15%;
+          }
+        }
+      }
+    }
+  }
+
+  .make-bold {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  //Both Column
+  .col {
+    flex: 1;
+    border: solid 1px hsla(0, 0%, 47%, 0.15);
+  }
+  .top-section,
+  .col {
+    padding: 40px;
+  }
+  h1 {
+    font-size: 1.73em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  button {
+    margin-top: 30px;
+  }
+}
